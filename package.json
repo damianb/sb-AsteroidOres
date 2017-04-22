@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "sb-buildpatches": "github:damianb/sb-buildpatches"
+  }
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "op": "replace",
+    "path": "/asteroid/0/1/2/1",
+    "value": 0.3
+  },
+  {
+    "op": "replace",
+    "path": "/asteroid/0/1/2/0",
+    "value": "tungsten"
+  },
+  {
+    "op": "replace",
+    "path": "/asteroid/0/1/1/1",
+    "value": 0.3
+  },
+  {
+    "op": "replace",
+    "path": "/asteroid/0/1/1/0",
+    "value": "iron"
+  },
+  {
+    "op": "replace",
+    "path": "/asteroid/0/1/0/1",
+    "value": 0.5
+  },
+  {
+    "op": "replace",
+    "path": "/asteroid/0/1/0/0",
+    "value": "diamond"
+  },
+  {
+    "op": "add",
+    "path": "/asteroid/0/1/3",
+    "value": [
+      "titanium",
+      0.5
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/asteroid/0/1/4",
+    "value": [
+      "durasteel",
+      0.3
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/asteroid/0/1/5",
+    "value": [
+      "aegisalt",
+      0.4
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/asteroid/0/1/6",
+    "value": [
+      "ferozium",
+      0.4
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/asteroid/0/1/7",
+    "value": [
+      "violium",
+      0.4
+    ]
+  },
+  {
+    "op": "add",
+    "path": "/asteroid/0/1/8",
+    "value": [
+      "solarium",
+      0.5
+    ]
+  }
+]
