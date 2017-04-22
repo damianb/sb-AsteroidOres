@@ -11,3 +11,13 @@ My hope is that by allowing mod developers to modify a copy of the original Star
 ## license
 
 MIT license.
+
+## building the mod
+
+Run the "buildpak.bat" file, either through cmd or through double-clicking.
+
+This will do the following:
+
+* Locate the Starbound asset_packer executable for use.
+* Run the pre-pak hook bat file - which will run buildpatches.js, which rebuilds our Starbound asset patch files.
+* Pack the src directory into a pak with asset_packer, including our newly generated Starbound asset patch files.
