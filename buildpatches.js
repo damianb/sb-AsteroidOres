@@ -8,9 +8,10 @@
 //
 /*jslint node: true, asi: true */
 "use strict"
+let path = require('path')
 let patchbuilder = require('sb-buildpatches')
-patchbuilder({
-	workingDir: 'D:\\code\\starbound\\sb-AsteroidOres\\modified',
-	dest: 'D:\\code\\starbound\\sb-AsteroidOres\\src',
-	starboundAssets: 'E:\\Steam\\steamapps\\common\\Starbound\\assets\\packed'
-})
+let config = require('./config.json')
+config = config || {}
+config.workingDir = config.workingDir || path.join(__dirname, 'modified/')
+config.dest = config.dest || path.join(__dirname, 'src/')
+patchbuilder(config)
