@@ -12,6 +12,6 @@ let path = require('path')
 let patchbuilder = require('sb-buildpatches')
 let config = require('./config.json')
 config = config || {}
-config.workingDir = config.workingDir || path.join(__dirname, 'modified/')
-config.dest = config.dest || path.join(__dirname, 'src/')
+config.workingDir = config.workingDir || path.join(__dirname, 'modified')
+config.dest = config.dest || path.join(__dirname, 'src')
 patchbuilder(config)
