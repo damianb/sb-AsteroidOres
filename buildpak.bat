@@ -39,7 +39,7 @@ set argv=%*
 REM //////////////////////////////////////////////////////////////////////////////////
 REM // configure the build script here
 REM //////////////////////////////////////////////////////////////////////////////////
-set pakname=AsteroidOres.pak
+set pakname=MyMod.pak
 set builddir=%rootdir%build
 set srcdir=%rootdir%src
 
@@ -212,7 +212,7 @@ if exist "%rootdir%prepakhook.bat" (
 	echo found pre-pak hook, executing...
 	call "%rootdir%prepakhook.bat" "%pakname%"
 	REM // if the pre-pak hook returned a non-zero error code, explode
-	if not errorlevel 0 (
+	if errorlevel 1 (
 		echo pre-pak hook returned a failure code.
 		echo something might have went wrong.
 		set iserror=1
@@ -238,7 +238,7 @@ if exist "%rootdir%postpakhook.bat" (
 	echo found post-pak hook, executing...
 	call "%rootdir%postpakhook.bat" "%builddir%\%pakname%"
 	REM // if the post-pak hook returned a non-zero error code, explode
-	if not errorlevel 0 (
+	if errorlevel 1 (
 		echo post-pak hook returned a failure code.
 		echo something might have went wrong.
 		set iserror=1

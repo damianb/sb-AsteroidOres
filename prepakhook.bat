@@ -43,5 +43,10 @@ if(!argv!) NEQ () (
 
 node buildpatches.js
 
+if errorlevel 1 (
+	set iserror=1
+	goto END
+)
+
 :END
 exit /b %iserror%

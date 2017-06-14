@@ -41,21 +41,33 @@ if(!argv!) NEQ () (
 	goto END
 )
 
+REM // validate JSON for the mod
+node validate.js
+
+if errorlevel 1 (
+	set iserror=1
+	goto END
+)
+
+REM // Attempt to copy the mod pak into ./../_packed_mods/
 for %%F in ("%rootdir%") do set dest=%%~dpF
 set dest=%dest:~0,-1%
 for %%F in ("%dest%") do set dest=%%~dpF
 set dest=%dest:~0,-1%
 set dest=%dest%\_packed_mods\
-for %%F in ("%pakfile%") do set pakname=%%~nxF
 
-echo copying pak file "%pakname%" 
-echo - from %pakfile% 
-echo - to %dest%
-copy "%pakfile%" "%dest%" >nul
-if not errorlevel 0 (
-	echo failed to copy pak to packed_mods directory.
-	set iserror=1
-	goto END
+if exist %dest% (
+	for %%F in ("%pakfile%") do set pakname=%%~nxF
+
+	echo copying pak file "%pakname%" 
+	echo - from %pakfile% 
+	echo - to %dest%
+	copy "%pakfile%" "%dest%" >nul
+	if errorlevel 1 (
+		echo failed to copy pak to packed_mods directory.
+		set iserror=1
+		goto END
+	)
 )
 
 :END
