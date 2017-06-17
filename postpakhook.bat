@@ -1,5 +1,5 @@
 @echo off
-REM Starbound mod pak helper script - post-pak hook.
+REM SMTk - Starbound Mod Toolkit
 REM 
 REM @author katana <katana@odios.us>
 REM @license MIT license <https://opensource.org/licenses/MIT>
@@ -40,9 +40,6 @@ if(!argv!) NEQ () (
 	set iserror=1
 	goto END
 )
-
-REM // validate JSON for the mod
-node validate.js
 
 if errorlevel 1 (
 	set iserror=1

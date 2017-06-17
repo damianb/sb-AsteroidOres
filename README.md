@@ -1,6 +1,6 @@
 # sb-AsteroidOres
 
-AsteroidOres is a simple example Starbound mod demonstrating the use of [sb-buildpak](https://github.com/damianb/sb-buildpak) and [sb-buildpatches](https://github.com/damianb/sb-buildpatches). for use in a Windows-based build system.
+AsteroidOres is a simple example Starbound mod demonstrating the use of [SMTk](https://github.com/damianb/smtk) for use in a Windows-based build system.
 
 ## why?
 
@@ -8,16 +8,27 @@ All it really does is add some higher tier ores to asteroid fields for easy mini
 
 My hope is that by allowing mod developers to modify a copy of the original Starbound asset files, it will allow quicker, easier mod development and get developers to spend less time focusing on the niceties of the JSON patch specification and let them spend more time on adding content to their mods.
 
-## license
+## configuration
 
-MIT license.
+To build the mod correctly:
+
+* Install SMTk
+* Within your SMTk installation, run the "tool.unpackassets.bat" script if you do not already have the Starbound assets unpacked somewhere.
+* Update the _smtkpath.bat file with the path to your SMTk installation.
+* Update the config.bat file accordingly.
 
 ## building the mod
 
-Run the "buildpak.bat" file, either through cmd or through double-clicking.
+Run the "make.bat" file, either through cmd or through double-clicking.
 
 This will do the following:
 
-* Locate the Starbound asset_packer executable for use.
-* Run the pre-pak hook bat file - which will run buildpatches.js, which rebuilds our Starbound asset patch files.
-* Pack the src directory into a pak with asset_packer, including our newly generated Starbound asset patch files.
+* Locate the Starbound utilities (such as asset_packer.exe) for use.
+* Run the patch builder to create JSON patch files.
+* Run PNG compression on any assets in the mod's source directory.
+* Run the JSON validator on all JSON-based mod files.
+* Build a mod pak file from the mod's source files with Starbound's asset_packer executable.
+
+## license
+
+MIT license.
